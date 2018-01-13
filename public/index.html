@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Ethereum Blockchain Tutorial</title>
+</head>
+<body>
+   <p id="blockchain">Ethereum tutorial</p>
+   <button onclick="EthereumServer()">Connect to the Ethereum</button>
+</body>
+<script>
+   function EthereumServer()
+   {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+         document.getElementById("blockchain").innerHTML = this.responseText;
+         }
+      };
+      xhttp.open("GET", "/blockchain", true);
+      xhttp.send();
+   }
+</script>
+</html>
